@@ -1,5 +1,7 @@
 # Agenda contacte
-Utilizatorul poate adauga,elimina,sorta crescator/descrescator dupa nume/prenume,cauta contacte dupa nume/prenume/numar de telefon. Fiecare contact are ca informatii: nume, prenume, numar de telefon.
+Utilizatorul poate adauga,elimina,sorta crescator/descrescator dupa nume/prenume,cauta contacte dupa nume/prenume/numar de telefon.
+Fiecare contact are ca informatii: nume, prenume, numar de telefon.
+
 ## Cerințe obligatorii 
 
 Nerespectarea duce la nepunctarea proiectului
