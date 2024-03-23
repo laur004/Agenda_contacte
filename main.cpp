@@ -13,6 +13,7 @@ public:
     ~Contact();
     Contact();
     Contact(std::string nume, std::string prenume, std::string numar_telefon);
+    Contact(const Contact& other);
     Contact& operator=(const Contact& other);
 
     void afisare_contact() const;
@@ -32,10 +33,17 @@ public:
     bool operator>(const Contact& other) const;
 };
 
-Contact::~Contact()=default;
+Contact::~Contact(){
+    std::cout << "Contactul a fost sters cu succes!\n";
+}
 
 Contact::Contact() : nume("contact"), prenume("anonim"), numar_telefon("fara numar") {}
 Contact::Contact(std::string nume, std::string prenume, std::string numar_telefon) : nume(std::move(nume)), prenume(std::move(prenume)), numar_telefon(std::move(numar_telefon)) {}
+Contact::Contact(const Contact& other): nume(other.nume), prenume(other.prenume), numar_telefon(other.numar_telefon) {
+    std::cout<<"Contactul s-a copiat cu succes!\n";
+}
+
+
 
 Contact& Contact::operator=(const Contact& other) {
     if (this != &other) {
@@ -182,7 +190,6 @@ void Lista_Contacte::eliminare_contact() {
     }
 
     lista_contacte.erase(lista_contacte.begin() + indice - 1);
-    std::cout << "Contactul a fost sters cu succes!\n";
 }
 
 
@@ -241,10 +248,11 @@ void Lista_Contacte::sorteaza_descrescator_contacte() {
 
 void Lista_Contacte::citeste_si_afiseaza_n_contacte() {
     std::vector<Contact> contacte;
-    unsigned int n,nr_contacte;
+    unsigned int n;
     std::cout<<"Numar contacte de adaugat sa adaugat: ";
     std::cin>>n;
     for (unsigned int i = 0; i < n; ++i) {
+        unsigned int nr_contacte;
         nr_contacte=lista_contacte.size();
         Contact contact;
         std::cout << "Introduceti datele pentru contactul " << i + 1 << ":\n";
