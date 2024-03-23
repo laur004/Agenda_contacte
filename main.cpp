@@ -249,10 +249,11 @@ void Lista_Contacte::sorteaza_descrescator_contacte() {
 
 void Lista_Contacte::citeste_si_afiseaza_n_contacte() {
     std::vector<Contact> contacte;
-    unsigned int n,nr_contacte;
+    unsigned int n;
     std::cout<<"Numar contacte de adaugat sa adaugat: ";
     std::cin>>n;
     for (unsigned int i = 0; i < n; ++i) {
+        unsigned int nr_contacte;
         nr_contacte=lista_contacte.size();
         Contact contact;
         std::cout << "Introduceti datele pentru contactul " << i + 1 << ":\n";
