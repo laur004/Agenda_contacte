@@ -40,7 +40,7 @@ Contact::~Contact(){
 Contact::Contact() : nume("contact"), prenume("anonim"), numar_telefon("fara numar") {}
 Contact::Contact(std::string nume, std::string prenume, std::string numar_telefon) : nume(std::move(nume)), prenume(std::move(prenume)), numar_telefon(std::move(numar_telefon)) {}
 Contact::Contact(const Contact& other): nume(other.nume), prenume(other.prenume), numar_telefon(other.numar_telefon) {
-    std::cout<<"Contactul s-a copiat cu succes!";
+    std::cout<<"Contactul s-a copiat cu succes!\n";
 }
 
 
